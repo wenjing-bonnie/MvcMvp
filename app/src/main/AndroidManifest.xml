@@ -10,10 +10,12 @@
         android:supportsRtl="true"
         android:theme="@android:style/Theme.Holo.Light">
         <activity
-            android:name=".mvp.MvpActivity"
+            android:name=".mvp.v.MvpActivity"
+            android:label="MVP"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".mvc.MvcActivity"
+            android:name=".mvc.c_v.MvcActivity"
+            android:label="MVC"
             android:parentActivityName=".MainActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

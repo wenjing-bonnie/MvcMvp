@@ -1,4 +1,4 @@
-package com.android.mvcmcp.mvp;
+package com.android.mvcmcp.mvp.m;
 
 import com.android.mvcmcp.model.IHttpResult;
 
@@ -7,7 +7,7 @@ import com.android.mvcmcp.model.IHttpResult;
  *
  * @author wenjing.liu
  */
-public interface IMvPModelInterface {
+public interface IMvpModelInterface {
     /**
      * 登录
      *

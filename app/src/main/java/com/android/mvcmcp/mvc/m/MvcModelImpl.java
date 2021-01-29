@@ -1,16 +1,14 @@
-package com.android.mvcmcp.mvc;
+package com.android.mvcmcp.mvc.m;
 
-import android.app.Activity;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.text.TextUtils;
 
 import com.android.mvcmcp.model.IHttpResult;
-import com.android.mvcmcp.model.IViewCacheBean;
 import com.android.mvcmcp.model.User;
-
-import java.util.logging.LogRecord;
+import com.android.mvcmcp.mvc.m.IMvcModelInterface;
+import com.android.mvcmcp.mvc.m.MvcCacheBean;
 
 /**
  * Created by wenjing.liu on 2021/1/28 in J1.

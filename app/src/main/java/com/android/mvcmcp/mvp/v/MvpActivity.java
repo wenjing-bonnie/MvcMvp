@@ -1,4 +1,4 @@
-package com.android.mvcmcp.mvc;
+package com.android.mvcmcp.mvp.v;
 
 import android.app.Activity;
 import android.graphics.Color;
@@ -9,12 +9,13 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.android.mvcmcp.R;
-import com.android.mvcmcp.model.IHttpResult;
-import com.android.mvcmcp.model.IViewCacheBean;
 import com.android.mvcmcp.model.User;
+import com.android.mvcmcp.mvp.m.MvpCacheBean;
+import com.android.mvcmcp.mvp.p.MvpPresenter;
 
-public class MvcActivity extends Activity {
-    private IMvcModelInterface model;
+public class MvpActivity extends Activity implements IMvpViewInterface {
+    private MvpPresenter presenter;
+
     private TextView tvUserInfo;
     private EditText etAccount;
     private EditText etPassword;
@@ -25,8 +26,8 @@ public class MvcActivity extends Activity {
         setContentView(R.layout.activity_mvc);
         //初始化View
         initWidget();
-        //初始化Model
-        model = new MvcModelImpl();
+        //初始化Presenter
+        presenter = new MvpPresenter(MvpActivity.this);
     }
 
     private void initWidget() {
@@ -44,20 +45,20 @@ public class MvcActivity extends Activity {
             tvUserInfo.setText("账号和密码不能为空");
             return;
         }
-        model.login(account, password, new IHttpResult() {
-            @Override
-            public void success(IViewCacheBean cacheBean) {
-                MvcCacheBean mvcCacheBean = (MvcCacheBean) cacheBean;
-                User user = mvcCacheBean.user;
-                tvUserInfo.setText(String.format("用户登录成功\n用户名：%s\n性别：%s\n年龄：%s", user.name, user.sex, user.age));
-                tvUserInfo.setTextColor(Color.GREEN);
-            }
+        presenter.login(account, password);
+    }
 
-            @Override
-            public void failure(String error) {
-                tvUserInfo.setText(error);
-                tvUserInfo.setTextColor(Color.RED);
-            }
-        });
+    @Override
+    public void loginSuccess(MvpCacheBean cacheBean) {
+        MvpCacheBean mvpCacheBean = (MvpCacheBean) cacheBean;
+        User user = mvpCacheBean.user;
+        tvUserInfo.setText(String.format("用户登录成功\n用户名：%s\n性别：%s\n年龄：%s", user.name, user.sex, user.age));
+        tvUserInfo.setTextColor(Color.GREEN);
+    }
+
+    @Override
+    public void loginFailure(String error) {
+        tvUserInfo.setText(error);
+        tvUserInfo.setTextColor(Color.RED);
     }
 }

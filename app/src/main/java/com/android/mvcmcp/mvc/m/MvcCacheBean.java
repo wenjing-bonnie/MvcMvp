@@ -1,4 +1,4 @@
-package com.android.mvcmcp.mvc;
+package com.android.mvcmcp.mvc.m;
 
 import com.android.mvcmcp.model.IViewCacheBean;
 import com.android.mvcmcp.model.User;
