@@ -42,6 +42,7 @@ public class MvcModelImpl implements IMvcModelInterface {
 
     @Override
     public void login(String account, String password, IHttpResult result) {
+        //模拟具体的网络请求方式的实现：子线程去请求数据，数据处理完之后返回的UI线程
         new Thread(new Runnable() {
             @Override
             public void run() {

@@ -8,8 +8,15 @@ import com.android.mvcmcp.mvc.m.MvcCacheBean;
  * @author wenjing.liu
  */
 public interface IMvpViewInterface {
-
+    /**
+     * 接口登录成功回调
+     * @param cacheBean
+     */
     void loginSuccess(MvcCacheBean cacheBean);
 
+    /**
+     * 接口登录失败的回调
+     * @param error
+     */
     void loginFailure(String error);
 }

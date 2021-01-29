@@ -40,10 +40,6 @@ public class MvpActivity extends Activity implements IMvpViewInterface {
         tvUserInfo.setTextColor(Color.BLACK);
         String account = etAccount.getText().toString();
         String password = etPassword.getText().toString();
-        if (TextUtils.isEmpty(account) || TextUtils.isEmpty(password)) {
-            tvUserInfo.setText("账号和密码不能为空");
-            return;
-        }
         //View不需要关系业务逻辑，只需到时候在回调的方法里面填写代码即可
         presenter.login(account, password);
     }

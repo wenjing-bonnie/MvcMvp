@@ -39,15 +39,21 @@ public class MvcActivity extends Activity {
         etPassword = findViewById(R.id.et_password);
     }
 
+    /**
+     * 登录button的点击事件
+     *
+     * @param view
+     */
     public void btnLogin(View view) {
         tvUserInfo.setText("稍等1s之后就可以看到模拟的结果");
         tvUserInfo.setTextColor(Color.BLACK);
         String account = etAccount.getText().toString();
         String password = etPassword.getText().toString();
         if (TextUtils.isEmpty(account) || TextUtils.isEmpty(password)) {
-            Toast.makeText(MvcActivity.this,"账号和密码不能为空",Toast.LENGTH_SHORT).show();
+            Toast.makeText(MvcActivity.this, "账号和密码不能为空", Toast.LENGTH_SHORT).show();
             return;
         }
+        //调用Model层进行网络请求
         model.login(account, password, new IHttpResult() {
             @Override
             public void success(IViewCacheBean cacheBean) {
