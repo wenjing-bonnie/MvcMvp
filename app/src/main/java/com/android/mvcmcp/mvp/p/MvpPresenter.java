@@ -4,6 +4,9 @@ import android.content.Context;
 import android.text.TextUtils;
 import android.widget.Toast;
 
+import com.android.mvcmcp.mvc.m.IMvcModelInterface;
+import com.android.mvcmcp.mvc.m.MvcCacheBean;
+import com.android.mvcmcp.mvc.m.MvcModelImpl;
 import com.android.mvcmcp.network.IHttpResult;
 import com.android.mvcmcp.network.IViewCacheBean;
 import com.android.mvcmcp.mvp.m.IMvpModelInterface;
@@ -19,13 +22,13 @@ import com.android.mvcmcp.mvp.m.MvpCacheBean;
  */
 public class MvpPresenter implements IMvpPresenterInterface {
     private IMvpViewInterface mvpViewInterface;
-    private IMvpModelInterface model;
+    private IMvcModelInterface model;
     private Context context;
 
     public MvpPresenter(IMvpViewInterface viewInterface) {
         this.mvpViewInterface = viewInterface;
         this.context = (Context) viewInterface;
-        model = new MvpModelImpl();
+        model = new MvcModelImpl();
     }
 
     @Override
@@ -38,7 +41,7 @@ public class MvpPresenter implements IMvpPresenterInterface {
         model.login(account, password, new IHttpResult() {
             @Override
             public void success(IViewCacheBean cacheBean) {
-                mvpViewInterface.loginSuccess( (MvpCacheBean)cacheBean);
+                mvpViewInterface.loginSuccess( (MvcCacheBean)cacheBean);
             }
 
             @Override

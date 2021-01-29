@@ -1,6 +1,6 @@
 package com.android.mvcmcp.mvp.v;
 
-import com.android.mvcmcp.mvp.m.MvpCacheBean;
+import com.android.mvcmcp.mvc.m.MvcCacheBean;
 
 /**
  * Created by wenjing.liu on 2021/1/29 in J1.
@@ -9,7 +9,7 @@ import com.android.mvcmcp.mvp.m.MvpCacheBean;
  */
 public interface IMvpViewInterface {
 
-    void loginSuccess(MvpCacheBean cacheBean);
+    void loginSuccess(MvcCacheBean cacheBean);
 
     void loginFailure(String error);
 }

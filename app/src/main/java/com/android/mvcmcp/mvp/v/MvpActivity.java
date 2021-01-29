@@ -9,9 +9,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.android.mvcmcp.R;
-import com.android.mvcmcp.network.User;
-import com.android.mvcmcp.mvp.m.MvpCacheBean;
+import com.android.mvcmcp.mvc.m.MvcCacheBean;
 import com.android.mvcmcp.mvp.p.MvpPresenter;
+import com.android.mvcmcp.network.User;
 
 public class MvpActivity extends Activity implements IMvpViewInterface {
     private MvpPresenter presenter;
@@ -49,8 +49,8 @@ public class MvpActivity extends Activity implements IMvpViewInterface {
     }
 
     @Override
-    public void loginSuccess(MvpCacheBean cacheBean) {
-        MvpCacheBean mvpCacheBean = (MvpCacheBean) cacheBean;
+    public void loginSuccess(MvcCacheBean cacheBean) {
+        MvcCacheBean mvpCacheBean = (MvcCacheBean) cacheBean;
         User user = mvpCacheBean.user;
         tvUserInfo.setText(String.format("用户登录成功\n用户名：%s\n性别：%s\n年龄：%s", user.name, user.sex, user.age));
         tvUserInfo.setTextColor(Color.GREEN);
