@@ -9,7 +9,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.android.mvcmcp.R;
-import com.android.mvcmcp.model.User;
+import com.android.mvcmcp.network.User;
 import com.android.mvcmcp.mvp.m.MvpCacheBean;
 import com.android.mvcmcp.mvp.p.MvpPresenter;
 

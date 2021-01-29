@@ -10,9 +10,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.mvcmcp.R;
-import com.android.mvcmcp.model.IHttpResult;
-import com.android.mvcmcp.model.IViewCacheBean;
-import com.android.mvcmcp.model.User;
+import com.android.mvcmcp.network.IHttpResult;
+import com.android.mvcmcp.network.IViewCacheBean;
+import com.android.mvcmcp.network.User;
 import com.android.mvcmcp.mvc.m.IMvcModelInterface;
 import com.android.mvcmcp.mvc.m.MvcCacheBean;
 import com.android.mvcmcp.mvc.m.MvcModelImpl;

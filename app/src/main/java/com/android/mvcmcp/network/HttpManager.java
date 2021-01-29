@@ -1,4 +1,4 @@
-package com.android.mvcmcp.model;
+package com.android.mvcmcp.network;
 
 /**
  * Created by wenjing.liu on 2021/1/28 in J1.

@@ -1,6 +1,6 @@
 package com.android.mvcmcp.mvp.m;
 
-import com.android.mvcmcp.model.IHttpResult;
+import com.android.mvcmcp.network.IHttpResult;
 
 /**
  * Created by wenjing.liu on 2021/1/28 in J1.

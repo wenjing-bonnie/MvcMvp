@@ -5,9 +5,8 @@ import android.os.Looper;
 import android.os.Message;
 import android.text.TextUtils;
 
-import com.android.mvcmcp.model.IHttpResult;
-import com.android.mvcmcp.model.User;
-import com.android.mvcmcp.mvc.m.MvcCacheBean;
+import com.android.mvcmcp.network.IHttpResult;
+import com.android.mvcmcp.network.User;
 
 /**
  * Created by wenjing.liu on 2021/1/28 in J1.

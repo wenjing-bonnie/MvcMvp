@@ -1,7 +1,7 @@
 package com.android.mvcmcp.mvc.m;
 
-import com.android.mvcmcp.model.IViewCacheBean;
-import com.android.mvcmcp.model.User;
+import com.android.mvcmcp.network.IViewCacheBean;
+import com.android.mvcmcp.network.User;
 
 /**
  * Created by wenjing.liu on 2021/1/28 in J1.
