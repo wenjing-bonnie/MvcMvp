@@ -15,7 +15,6 @@ import com.android.mvcmcp.network.User;
 
 public class MvpActivity extends Activity implements IMvpViewInterface {
     private MvpPresenter presenter;
-
     private TextView tvUserInfo;
     private EditText etAccount;
     private EditText etPassword;
@@ -45,9 +44,15 @@ public class MvpActivity extends Activity implements IMvpViewInterface {
             tvUserInfo.setText("账号和密码不能为空");
             return;
         }
+        //View不需要关系业务逻辑，只需到时候在回调的方法里面填写代码即可
         presenter.login(account, password);
     }
 
+    /**
+     * 只需要在成功和失败回调之后处理UI，使代码更加简洁
+     *
+     * @param cacheBean
+     */
     @Override
     public void loginSuccess(MvcCacheBean cacheBean) {
         MvcCacheBean mvpCacheBean = (MvcCacheBean) cacheBean;

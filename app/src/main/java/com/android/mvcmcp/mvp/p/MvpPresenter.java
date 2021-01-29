@@ -7,12 +7,9 @@ import android.widget.Toast;
 import com.android.mvcmcp.mvc.m.IMvcModelInterface;
 import com.android.mvcmcp.mvc.m.MvcCacheBean;
 import com.android.mvcmcp.mvc.m.MvcModelImpl;
+import com.android.mvcmcp.mvp.v.IMvpViewInterface;
 import com.android.mvcmcp.network.IHttpResult;
 import com.android.mvcmcp.network.IViewCacheBean;
-import com.android.mvcmcp.mvp.m.IMvpModelInterface;
-import com.android.mvcmcp.mvp.m.MvpModelImpl;
-import com.android.mvcmcp.mvp.v.IMvpViewInterface;
-import com.android.mvcmcp.mvp.m.MvpCacheBean;
 
 /**
  * Created by wenjing.liu on 2021/1/29 in J1.
@@ -28,6 +25,7 @@ public class MvpPresenter implements IMvpPresenterInterface {
     public MvpPresenter(IMvpViewInterface viewInterface) {
         this.mvpViewInterface = viewInterface;
         this.context = (Context) viewInterface;
+        //实例化Model
         model = new MvcModelImpl();
     }
 
@@ -41,7 +39,7 @@ public class MvpPresenter implements IMvpPresenterInterface {
         model.login(account, password, new IHttpResult() {
             @Override
             public void success(IViewCacheBean cacheBean) {
-                mvpViewInterface.loginSuccess( (MvcCacheBean)cacheBean);
+                mvpViewInterface.loginSuccess((MvcCacheBean) cacheBean);
             }
 
             @Override
